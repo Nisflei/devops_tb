@@ -1,9 +1,328 @@
 <!DOCTYPE html>
-<header>
-</header>
-<body> 
-    <center>
-    <h1> Usando projeto na Turma B - novo status</h1>
-    <h1> novo conteudo para manutenção</h1>
-    </center>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kung Fu Panda</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #1b1b1b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #111111, #7b1e1e);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #eeeeee;
+        }
+
+        nav {
+            background: #111111;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.75)
+                ),
+                url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-left: 6px solid #9e2a2b;
+            padding-left: 15px;
+        }
+
+        .historia {
+            background: #292929;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .personagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #292929;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid #d4af37;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card .emoji {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .frase {
+            background: linear-gradient(135deg, #7b1e1e, #3b1010);
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+        }
+
+        .frase p {
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        .frase span {
+            display: block;
+            margin-top: 15px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #111111;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            border-top: 3px solid #d4af37;
+        }
+
+        footer p {
+            color: #cccccc;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🐼 Kung Fu Panda</h1>
+        <p>Uma jornada de coragem, amizade e superação</p>
+    </header>
+
+    <nav>
+        <a href="#historia">História</a>
+        <a href="#personagens">Personagens</a>
+        <a href="#filosofia">Filosofia</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>O Guerreiro Dragão</h2>
+            <p>
+                Uma aventura que mostra que acreditar em si mesmo
+                pode transformar completamente o nosso destino.
+            </p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <section id="historia">
+            <h2>📖 A História</h2>
+
+            <div class="historia">
+                <p>
+                    Kung Fu Panda acompanha Po, um panda apaixonado por
+                    kung fu que trabalha na loja de macarrão de sua família.
+                    Apesar de sonhar em se tornar um grande mestre,
+                    Po acredita que esse sonho está muito distante de sua realidade.
+                </p>
+
+                <br>
+
+                <p>
+                    Sua vida muda quando ele é inesperadamente escolhido
+                    para se tornar o lendário Guerreiro Dragão. A partir
+                    desse momento, Po precisa enfrentar seus próprios medos,
+                    aprender kung fu e descobrir que possui habilidades
+                    que nem ele mesmo imaginava.
+                </p>
+
+                <br>
+
+                <p>
+                    Ao lado de seus mestres e amigos, Po aprende importantes
+                    lições sobre determinação, confiança, amizade e
+                    principalmente sobre acreditar em si mesmo.
+                </p>
+            </div>
+        </section>
+
+        <section id="personagens">
+            <h2>🥋 Personagens</h2>
+
+            <div class="personagens">
+
+                <div class="card">
+                    <div class="emoji">🐼</div>
+                    <h3>Po</h3>
+                    <p>
+                        Um panda divertido e determinado que sonha em
+                        dominar o kung fu e se tornar um grande guerreiro.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">🐯</div>
+                    <h3>Tigresa</h3>
+                    <p>
+                        Uma guerreira disciplinada, forte e dedicada
+                        ao treinamento de kung fu.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">🐵</div>
+                    <h3>Macaco</h3>
+                    <p>
+                        Um dos integrantes dos Cinco Furiosos,
+                        conhecido por sua habilidade e agilidade.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">🐢</div>
+                    <h3>Mestre Oogway</h3>
+                    <p>
+                        Um sábio mestre que transmite importantes
+                        ensinamentos sobre a vida e o destino.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="filosofia">
+            <h2>🌟 Uma grande lição</h2>
+
+            <div class="frase">
+                <p>
+                    "O verdadeiro poder está em acreditar
+                    no potencial que existe dentro de você."
+                </p>
+
+                <span>— Mestre Oogway</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            🐼 Página educativa sobre Kung Fu Panda
+        </p>
+
+        <p>
+            Desenvolvida com HTML5 e CSS3
+        </p>
+    </footer>
+
 </body>
+</html>
+
