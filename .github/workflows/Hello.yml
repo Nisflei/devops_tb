@@ -1,0 +1,25 @@
+name: Primeiro CI 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Validacao:
+    # Maquina Virtual
+    runs-on: ubuntu-latest
+
+    # tarefas para a tarefa Validação
+    steps:
+      - name: Fazendo o gitclone 
+        uses: actions/checkout@v4
+      - name: Listando o diretorio para ver os arquivos
+        run: ls -l
+      - name: Deixando uma mensagem
+        run: echo "Esta funcionando o CI"
+
+        
+,
+          echo test, and deploy your project.
